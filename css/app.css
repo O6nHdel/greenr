@@ -20,7 +20,7 @@ a {
 
 .navbar {
   height: 98px;
-  background: red;
+  background-color: #dadada;
 }
 .navbar-content {
   height: inherit;
@@ -73,11 +73,9 @@ a {
 
 .main {
   padding: 64px;
+  background-color: #dadada;
 }
 
-.section {
-  background-color: green;
-}
 .section-content {
   display: flex;
   align-items: center;
@@ -109,55 +107,333 @@ a {
 }
 
 .card {
+  display: flex;
+  align-items: flex-start;
   border-radius: 10px;
   overflow: hidden;
   margin-top: 60px;
-  background-color: aqua;
+  padding: 20px;
+}
+.card .img-left {
+  flex-shrink: 0;
+}
+.card .test-img {
+  border-radius: 16px;
+  width: 500px;
+  height: 390px;
+  object-fit: cover;
+}
+.card .card-right {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-left: 20px;
+}
+.card .card-right .card-renovation,
+.card .card-right .card-energie,
+.card .card-right .card-adaptation {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 270px;
+  height: 390px;
+  padding: 20px;
+}
+.card .card-right .card-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.card .card-right .card-button {
+  margin-top: auto;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.5s;
+}
+.card .card-right .card-button-primary {
+  margin-top: 70px;
+  border: 1px solid #2E2E2E;
+  color: #2E2E2E;
+}
+.card .card-right .card-button-primary:hover {
+  border-color: #005e00;
+  color: #005e00;
+}
+.card .card-right .card-button-secondary {
+  color: #2E2E2E;
+}
+.card .card-right .card-button-secondary:hover {
+  background-color: #defdde;
+  color: #003f00;
 }
 
-.test-img {
+.list-logo {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centre verticalement */
+  height: 48px; /* Hauteur fixe pour le conteneur */
+  gap: 80px; /* Espacement entre les logos */
+}
+
+.list-logo img {
+  height: auto; /* Hauteur automatique pour conserver le ratio */
+  max-height: 90%; /* Ne pas dépasser la hauteur du conteneur */
+}
+
+/* Styles spécifiques pour chaque logo */
+.logo-az {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 40px; /* Largeur spécifique pour le logo AZ */
+  height: 30px;
+}
+
+.logo-brgm {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 124px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+}
+
+.logo-banque-postale {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 69px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+}
+
+.logo-thelem {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 102px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+  fill: gray;
+}
+
+.logo-bpce {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 127px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+}
+
+.logo-ign {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 58px; /* Largeur spécifique pour le logo AZ */
+  height: 27px;
+}
+
+.logo-credit-mutuel {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 227px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+}
+
+.logo-suravenir {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 133px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+}
+
+.section-info {
+  display: flex;
+  margin-top: 200px;
+  height: 574px;
+  border: 1.5px solid #2E2E2E;
+  border-radius: 32px;
+  padding: 48px;
+  justify-content: space-between;
+}
+
+.element-left {
+  height: 478px;
+  width: 360px;
+  justify-content: space-between;
+}
+.element-left .section-renovation,
+.element-left .section-energie,
+.element-left .section-adaptation {
+  display: flex; /* Ajoute display flex ici si nécessaire */
+  flex-direction: column; /* Pour aligner les sections verticalement */
+  align-items: center;
+  width: 360px;
+  height: 132px;
+  border-radius: 12px;
+  padding: 24px;
+  gap: 8px;
+  margin-bottom: 41px;
+}
+.element-left .section-renovation:hover,
+.element-left .section-energie:hover,
+.element-left .section-adaptation:hover {
+  background-color: rgba(255, 255, 255, 0.7137254902);
+}
+
+.element-right {
+  display: flex;
+  background-color: #ffffff;
   border-radius: 16px;
-  width: 507px;
-  height: 395px;
+  padding: 32px;
+  gap: 40px;
+  width: 872px;
+  height: 478px;
+  align-items: center;
+}
+
+.element-right-info {
+  position: relative;
+  width: 380px;
+  height: 414px;
+  gap: 40px;
+}
+
+.title-info {
+  height: 132px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.text-info {
+  height: 114px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.title-effect-purple {
+  position: relative;
+  font-weight: 700;
+  color: #7C5AD3;
+}
+
+.info-button {
+  position: absolute;
+  bottom: 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.5s;
+  margin-top: 70px;
+  border: 1px solid #2E2E2E;
+  color: #2E2E2E;
+}
+.info-button:hover {
+  border-color: #005e00;
+  color: #005e00;
+}
+
+.element-right-image {
+  position: relative;
+  width: 388px;
+  height: 414px;
+}
+
+.foret-img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.card-right {
-  display: flex; /* Utilise flexbox pour disposer les cartes */
-  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne si l'espace est insuffisant */
-  justify-content: space-between; /* Espace entre les cartes */
-  padding: 20px; /* Espace autour du conteneur */
+.element-savoir {
+  display: flex;
+  margin-top: 100px;
+  height: 216px;
+  border-radius: 24px;
+  justify-content: space-between;
+  padding: 64px;
+  background-color: #E7F9EA;
 }
 
-.card-renovation {
-  background-color: white; /* Couleur de fond de la carte */
-  border-radius: 16px; /* Bord arrondi */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
-  overflow: hidden; /* Cache les débordements */
-  width: 270px; /* Largeur fixe pour les cartes */
-  height: 390px; /* Hauteur fixe pour les cartes */
-  margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
-  padding: 20px; /* Espacement à l'intérieur de la carte */
+.title-savoir {
+  font-weight: bold;
+  font-size: 36px;
+  color: #004D26;
+}
+.title-savoir .effect-green {
+  color: #00BD5E;
 }
 
-.card-energie {
-  background-color: white; /* Couleur de fond de la carte */
-  border-radius: 16px; /* Bord arrondi */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
-  overflow: hidden; /* Cache les débordements */
-  width: 270px; /* Largeur fixe pour les cartes */
-  height: 390px; /* Hauteur fixe pour les cartes */
-  margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
-  padding: 20px; /* Espacement à l'intérieur de la carte */
+.button-savoir {
+  width: 258px;
+  height: 56px;
+  padding: 24px; /* Ajout du padding */
+  display: flex;
+  align-items: center; /* Centre le texte verticalement */
+  justify-content: center; /* Centre le texte horizontalement */
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: #00BD5E;
+  color: #FAFAFA;
+  transition: background-color 0.5s;
+}
+.button-savoir:hover {
+  background-color: #01994d;
 }
 
-.card-adaptation {
-  background-color: white; /* Couleur de fond de la carte */
-  border-radius: 16px; /* Bord arrondi */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
-  overflow: hidden; /* Cache les débordements */
-  width: 270px; /* Largeur fixe pour les cartes */
-  height: 390px; /* Hauteur fixe pour les cartes */
-  margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
-  padding: 20px; /* Espacement à l'intérieur de la carte */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 428px;
+  padding: 64px 64px 32px 64px;
+  gap: 32px;
+  background-color: #1F1F1F;
+}
+
+.container-footer {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.footer-renovation, .footer-energie, .footer-adaptation, .footer-ressources, .footer-propos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.footer-renovation h1, .footer-energie h1, .footer-adaptation h1, .footer-ressources h1, .footer-propos h1 {
+  color: #E7F9EA;
+  font-size: 16px;
+  gap: 8px;
+}
+.footer-renovation span, .footer-energie span, .footer-adaptation span, .footer-ressources span, .footer-propos span {
+  color: #D4D4D4;
+  font-size: 18px;
+  gap: 8px;
+}
+
+.footer-border {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1384px;
+  border: 1px solid #404040;
+}
+
+.bottom-footer {
+  display: flex;
+  width: 1384px;
+  height: 29px;
+  justify-content: space-between;
+}
+
+.bottom-footer-mot {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.bottom-footer-mot a {
+  color: #D4D4D4;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 0 10px;
+  border-right: 1px solid #404040; /* Ligne de séparation à droite de chaque lien */
+}
+
+.bottom-footer-mot a:last-child {
+  border-right: none; /* Pas de bordure pour le dernier lien */
 }/*# sourceMappingURL=app.css.map */
