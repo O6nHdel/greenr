@@ -1,0 +1,59 @@
+
+
+.card {
+    border-radius: 10px; // Applique un border-radius au conteneur
+    overflow: hidden; // Cache tout débordement des enfants
+    margin-top: 60px;
+    background-color: aqua;
+}
+
+
+
+.test-img {
+    border-radius: 16px; // Applique un border-radius à l'image
+    width: 507px; // Assure que l'image a une largeur de 507px
+    height: 395px; // Assure que l'image a une hauteur de 395px
+    object-fit: cover; // Assure que l'image remplit l'espace sans déformation
+}
+
+.card-right {
+    display: flex; /* Utilise flexbox pour disposer les cartes */
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne si l'espace est insuffisant */
+    justify-content: space-between; /* Espace entre les cartes */
+    padding: 20px; /* Espace autour du conteneur */
+}
+
+.card-renovation{
+    background-color: white; /* Couleur de fond de la carte */
+    border-radius: 16px; /* Bord arrondi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
+    overflow: hidden; /* Cache les débordements */
+    width: 270px; /* Largeur fixe pour les cartes */
+    height: 390px; /* Hauteur fixe pour les cartes */
+    margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
+    padding: 20px; /* Espacement à l'intérieur de la carte */
+}
+
+.card-energie{
+    background-color: white; /* Couleur de fond de la carte */
+    border-radius: 16px; /* Bord arrondi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
+    overflow: hidden; /* Cache les débordements */
+    width: 270px; /* Largeur fixe pour les cartes */
+    height: 390px; /* Hauteur fixe pour les cartes */
+    margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
+    padding: 20px; /* Espacement à l'intérieur de la carte */
+}
+
+.card-adaptation{
+    background-color: white; /* Couleur de fond de la carte */
+    border-radius: 16px; /* Bord arrondi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
+    overflow: hidden; /* Cache les débordements */
+    width: 270px; /* Largeur fixe pour les cartes */
+    height: 390px; /* Hauteur fixe pour les cartes */
+    margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
+    padding: 20px; /* Espacement à l'intérieur de la carte */
+}
+
+

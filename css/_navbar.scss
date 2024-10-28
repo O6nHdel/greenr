@@ -1,0 +1,66 @@
+.navbar {
+
+    height: 98px;
+
+    background: red;
+
+    &-content {
+        height: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 32px 24px 32px;
+    }
+
+    &-links {
+        display: flex;
+        gap: 32px;
+
+        font-weight: 500;
+        color: #404040;
+    }
+
+    &-left {
+        display: flex;
+        align-items: center;
+
+        gap: 48px;
+    }
+
+    &-buttons {
+        display: flex;
+        gap: 16px;        
+    }
+
+    &-button {   
+        display: flex;
+        align-items: center;
+
+        padding: 20px;
+        border-radius: 8px;
+        height: 50px;
+
+        &-secondary {
+            border: 1px solid #2E2E2E;
+            color: #2E2E2E;
+            font-weight: 500;
+
+            transition: border-color .5s, color .5s;
+            &:hover {
+                border-color: #00BD5E;
+                color: #00BD5E;
+            }
+        }
+
+        &-primary {
+            background-color: #00BD5E;
+            color: #FAFAFA;
+            font-weight: 600;
+
+            transition: background-color .5s;
+            &:hover {
+                background-color: #01994d;
+            }
+        }
+    }
+}
