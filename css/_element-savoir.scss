@@ -1,0 +1,38 @@
+.element-savoir {
+    display: flex;
+    margin-top: 100px;
+    height: 216px;
+    border-radius: 24px;
+    justify-content: space-between;
+    padding: 64px;
+    background-color: #E7F9EA;
+
+}
+
+.title-savoir {
+    font-weight: bold;
+    font-size: 36px;
+    color: #004D26;
+
+    .effect-green {
+        color: #00BD5E;
+    }
+}
+
+.button-savoir {
+    width: 258px;
+    height: 56px;
+    padding: 24px; /* Ajout du padding */
+    display: flex ;
+    align-items: center; /* Centre le texte verticalement */
+    justify-content: center; /* Centre le texte horizontalement */
+    border-radius: 8px;
+    font-weight: 600;
+    background-color: #00BD5E;
+    color: #FAFAFA;
+
+    transition: background-color .5s;
+    &:hover {
+        background-color: #01994d;
+    }
+}
