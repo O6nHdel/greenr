@@ -1,0 +1,64 @@
+.list-logo {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centre verticalement */
+    height: 48px; /* Hauteur fixe pour le conteneur */
+    gap: 80px; /* Espacement entre les logos */
+}
+
+.list-logo img {
+    height: auto; /* Hauteur automatique pour conserver le ratio */
+    max-height: 90%; /* Ne pas dépasser la hauteur du conteneur */
+}
+
+/* Styles spécifiques pour chaque logo */
+.logo-az {
+    filter: grayscale(100%); /* Rend toutes les images en gris */
+    width: 40px; /* Largeur spécifique pour le logo AZ */
+    height: 30px;
+    
+}
+
+.logo-brgm {
+    filter: grayscale(100%); /* Rend toutes les images en gris */
+    width: 124px; /* Largeur spécifique pour le logo AZ */
+    height: 48px;
+}
+
+.logo-banque-postale {
+    filter: grayscale(100%); /* Rend toutes les images en gris */
+    width: 69px; /* Largeur spécifique pour le logo AZ */
+    height: 48px;
+}
+
+.logo-thelem {
+    filter: grayscale(100%); /* Rend toutes les images en gris */
+    width: 102px; /* Largeur spécifique pour le logo AZ */
+    height: 48px;
+    fill: gray;
+}
+
+.logo-bpce {
+    filter: grayscale(100%); /* Rend toutes les images en gris */
+    width: 127px; /* Largeur spécifique pour le logo AZ */
+    height: 48px;
+}
+
+.logo-ign {
+    filter: grayscale(100%); /* Rend toutes les images en gris */
+    width: 58px; /* Largeur spécifique pour le logo AZ */
+    height: 27px;
+}
+
+.logo-credit-mutuel {
+    filter: grayscale(100%); /* Rend toutes les images en gris */
+    width: 227px; /* Largeur spécifique pour le logo AZ */
+    height: 48px;
+}
+
+.logo-suravenir {
+    filter: grayscale(100%); /* Rend toutes les images en gris */
+    width: 133px; /* Largeur spécifique pour le logo AZ */
+    height: 48px;
+}
