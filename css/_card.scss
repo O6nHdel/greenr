@@ -1,59 +1,75 @@
-
-
 .card {
-    border-radius: 10px; // Applique un border-radius au conteneur
-    overflow: hidden; // Cache tout débordement des enfants
+    display: flex; // Affiche en ligne
+    align-items: flex-start; // Aligne en haut
+    border-radius: 10px;
+    overflow: hidden;
     margin-top: 60px;
-    background-color: aqua;
+    padding: 20px;
+
+    .img-left {
+        flex-shrink: 0; // Empêche l'image de rétrécir
+    }
+
+    .test-img {
+        border-radius: 16px;
+        width: 500px;
+        height: 390px;
+        object-fit: cover;
+    }
+
+    .card-right {
+        display: flex;
+        flex-direction: row; // Place les cartes en ligne
+        gap: 20px; // Espacement entre chaque carte
+        margin-left: 20px; // Espace entre l'image et les cartes
+
+        .card-renovation,
+        .card-energie,
+        .card-adaptation {
+            display: flex; // Permet d’aligner les éléments de la carte en colonne
+            flex-direction: column; // Aligne les éléments verticalement
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 270px;
+            height: 390px;
+            padding: 20px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .card-button {
+            margin-top: auto; // Pousse le bouton vers le bas de la carte
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.5s;
+
+            &-primary {
+                margin-top: 70px;
+                border: 1px solid #2E2E2E;
+                color: #2E2E2E;
+
+                &:hover {
+                    border-color: #005e00;
+                    color: #005e00;
+                }
+            }
+
+            &-secondary {
+
+                color: #2E2E2E;
+
+                &:hover {
+                    background-color: #defdde;
+                    color: #003f00;
+                }
+            }
+        }
+    }
 }
-
-
-
-.test-img {
-    border-radius: 16px; // Applique un border-radius à l'image
-    width: 507px; // Assure que l'image a une largeur de 507px
-    height: 395px; // Assure que l'image a une hauteur de 395px
-    object-fit: cover; // Assure que l'image remplit l'espace sans déformation
-}
-
-.card-right {
-    display: flex; /* Utilise flexbox pour disposer les cartes */
-    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne si l'espace est insuffisant */
-    justify-content: space-between; /* Espace entre les cartes */
-    padding: 20px; /* Espace autour du conteneur */
-}
-
-.card-renovation{
-    background-color: white; /* Couleur de fond de la carte */
-    border-radius: 16px; /* Bord arrondi */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
-    overflow: hidden; /* Cache les débordements */
-    width: 270px; /* Largeur fixe pour les cartes */
-    height: 390px; /* Hauteur fixe pour les cartes */
-    margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
-    padding: 20px; /* Espacement à l'intérieur de la carte */
-}
-
-.card-energie{
-    background-color: white; /* Couleur de fond de la carte */
-    border-radius: 16px; /* Bord arrondi */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
-    overflow: hidden; /* Cache les débordements */
-    width: 270px; /* Largeur fixe pour les cartes */
-    height: 390px; /* Hauteur fixe pour les cartes */
-    margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
-    padding: 20px; /* Espacement à l'intérieur de la carte */
-}
-
-.card-adaptation{
-    background-color: white; /* Couleur de fond de la carte */
-    border-radius: 16px; /* Bord arrondi */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
-    overflow: hidden; /* Cache les débordements */
-    width: 270px; /* Largeur fixe pour les cartes */
-    height: 390px; /* Hauteur fixe pour les cartes */
-    margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
-    padding: 20px; /* Espacement à l'intérieur de la carte */
-}
-
-
