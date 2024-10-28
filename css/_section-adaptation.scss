@@ -1,0 +1,100 @@
+.section-info{
+    display: flex;
+    margin-top: 200px;
+    height: 574px;
+    border: 1.5px solid #2E2E2E;
+    border-radius: 32px;
+    padding: 48px;
+    justify-content: space-between;
+}
+
+.element-left{
+    height: 478px;
+    width: 360px;
+    justify-content: space-between;
+    
+    
+    .section-renovation,
+    .section-energie,
+    .section-adaptation{
+        display: flex; /* Ajoute display flex ici si nécessaire */
+        flex-direction: column; /* Pour aligner les sections verticalement */
+        align-items: center;
+        width: 360px;
+        height: 132px;
+        border-radius: 12px;
+        padding: 24px;
+        gap: 8px;
+        margin-bottom: 41px; 
+        &:hover {
+            background-color: #ffffffb6;
+        }
+    }
+}
+
+.element-right{
+    display: flex;  // Ajoutez cette ligne pour utiliser Flexbox
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    gap: 40px;
+    width: 872px;
+    height: 478px;
+    align-items: center; // Centre le contenu verticalement
+}
+
+.element-right-info{
+    position: relative;
+    width: 380px;
+    height: 414px;
+    gap: 40px;
+}
+
+.title-info{
+    height: 132px;
+    font-size: 36px; 
+    font-weight: bold;
+}
+
+.text-info{
+    height: 114px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.title-effect-purple {
+    position: relative;
+    font-weight: 700;
+    color: #7C5AD3;
+}
+
+.info-button {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.5s;
+    margin-top: 70px;
+    border: 1px solid #2E2E2E;
+    color: #2E2E2E;
+
+    &:hover{
+        border-color: #005e00;
+        color: #005e00;
+    }
+}
+
+.element-right-image{
+    position: relative;
+    width: 388px; // Définir une largeur si nécessaire
+    height: 414px; // La même hauteur que l'info
+}
+
+.foret-img {
+    border-radius: 8px;
+    width: 100%; // Utilise 100% de la largeur du conteneur
+    height: 100%; // Ajuste la hauteur automatiquement
+    object-fit: cover; // Maintient l'aspect ratio de l'image
+}
