@@ -36,3 +36,38 @@
         background-color: #01994d;
     }
 }
+
+@media (max-width: 768px) {
+    .element-savoir {
+        margin-top: 500px; /* Ajustez si nécessaire */
+        height: auto; /* Laisse la hauteur s'ajuster */
+        flex-direction: column; /* Change la direction en colonne */
+        align-items: center; /* Centre les éléments horizontalement */
+        padding: 32px; /* Réduire le padding pour les petits écrans */
+        background-color: #004D26;
+    }
+
+    .title-savoir {
+        font-size: 28px;
+        color: #FAFAFA;
+        gap: 16px;
+        
+        .effect-green {
+            color: #B1F6BD;
+        }
+    }
+
+    .text-savoir {
+        margin-top: 20px;
+        color: #FAFAFA;
+        font-size: 18px;
+        text-align: center; /* Centre le texte */
+    }
+
+    .button-savoir {
+        display: flex;
+        background-color: #B1F6BD;
+        color: #004D26;
+        margin-top: 20px; /* Ajoute un espacement au-dessus du bouton */
+    }
+}

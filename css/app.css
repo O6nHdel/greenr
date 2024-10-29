@@ -151,6 +151,11 @@ a {
   background-color: #dadada;
 }
 
+@media (max-width: 768px) {
+  .main {
+    padding: 24px;
+  }
+}
 .section-content {
   display: flex;
   align-items: center;
@@ -193,9 +198,6 @@ a {
   overflow: hidden;
   margin-top: 60px;
   padding: 20px;
-}
-.card .img-left {
-  flex-shrink: 0;
 }
 .card .maison-img {
   border-radius: 16px;
@@ -265,21 +267,18 @@ a {
   .maison-img {
     width: 100%; /* Prend toute la largeur de l’écran */
     height: auto; /* Ajuste la hauteur pour garder le ratio */
-    max-width: 342px; /* Largeur maximale pour éviter d'être trop grand */
+    border-radius: 16px;
   }
   .card-right {
     display: flex;
     flex-direction: column; /* Empile les cartes verticalement */
-    margin-left: 0; /* Supprime le décalage latéral */
     margin-top: 20px;
-    gap: 20px; /* Espacement entre les cartes */
     width: 100%; /* Prend toute la largeur de l'écran */
   }
   .card-renovation,
   .card-energie,
   .card-adaptation {
     width: 100%; /* Prend toute la largeur disponible */
-    max-width: 342px; /* Largeur maximale sur les petits écrans */
     height: auto; /* Ajuste la hauteur automatiquement */
   }
 }
@@ -464,7 +463,7 @@ a {
 /* Media Query pour les écrans de moins de 768px */
 @media (max-width: 768px) {
   .section-info {
-    margin-top: 20px;
+    margin-top: 50px;
     flex-direction: column; /* Change la direction en colonne */
     align-items: center; /* Centre les éléments */
     padding: 24px; /* Réduis le padding pour les petits écrans */
@@ -479,6 +478,9 @@ a {
     display: flex;
     flex-direction: column-reverse; /* Aligne les éléments en colonne */
     align-items: center; /* Centre les éléments à l'intérieur */
+    justify-content: flex-end;
+    min-height: 787px;
+    overflow-y: auto;
   }
   .element-right-info {
     width: 100%; /* Utilise 100% de la largeur pour le texte */
@@ -499,6 +501,8 @@ a {
   .section-renovation,
   .section-energie,
   .section-adaptation {
+    width: 114px;
+    height: 56px;
     align-items: center;
     width: 100%; /* Change la largeur pour s'adapter à l'écran */
     height: auto; /* Laisse la hauteur s'ajuster automatiquement */
@@ -513,6 +517,18 @@ a {
   .section-energie:hover,
   .section-adaptation:hover {
     background-color: rgba(255, 255, 255, 0.7137254902);
+  }
+  .info-button {
+    display: flex;
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 8px;
+    justify-content: center;
+    font-weight: 500;
+    transition: all 0.5s;
+    margin-top: 20px; /* Ajoutez un espacement au-dessus du bouton */
+    border: 1px solid #2E2E2E;
+    color: #2E2E2E;
   }
 }
 .element-savoir {
@@ -551,36 +567,89 @@ a {
   background-color: #01994d;
 }
 
+@media (max-width: 768px) {
+  .element-savoir {
+    margin-top: 500px; /* Ajustez si nécessaire */
+    height: auto; /* Laisse la hauteur s'ajuster */
+    flex-direction: column; /* Change la direction en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    padding: 32px; /* Réduire le padding pour les petits écrans */
+    background-color: #004D26;
+  }
+  .title-savoir {
+    font-size: 28px;
+    color: #FAFAFA;
+    gap: 16px;
+  }
+  .title-savoir .effect-green {
+    color: #B1F6BD;
+  }
+  .text-savoir {
+    margin-top: 20px;
+    color: #FAFAFA;
+    font-size: 18px;
+    text-align: center; /* Centre le texte */
+  }
+  .button-savoir {
+    display: flex;
+    background-color: #B1F6BD;
+    color: #004D26;
+    margin-top: 20px; /* Ajoute un espacement au-dessus du bouton */
+  }
+}
 .footer {
   display: flex;
   flex-direction: column;
+  /* Affiche les éléments internes en colonne */
   align-items: center;
-  height: 428px;
+  /* Centre .footer-border horizontalement */
   padding: 64px 64px 32px 64px;
+  /* Réduit la hauteur en fonction du contenu */
   gap: 32px;
   background-color: #1F1F1F;
+  width: 100%;
+  /* S'assure que le footer prend toute la largeur */
+  box-sizing: border-box;
+  /* Inclut le padding et les bordures dans la largeur */
 }
 
 .container-footer {
   display: flex;
+  /* Affiche .footer-renovation et .footer-energie en ligne */
   gap: 32px;
+  /* Espacement entre les deux sections */
   width: 100%;
+  /* S'étend sur toute la largeur */
   justify-content: space-between;
 }
 
-.footer-renovation, .footer-energie, .footer-adaptation, .footer-ressources, .footer-propos {
+.footer-renovation,
+.footer-energie,
+.footer-adaptation,
+.footer-ressources,
+.footer-propos {
   display: flex;
   flex-direction: column;
+  /* Garde les éléments internes en colonne */
   gap: 8px;
+  /* Séparation entre les éléments internes */
   font-size: 18px;
   font-weight: 400;
 }
-.footer-renovation h1, .footer-energie h1, .footer-adaptation h1, .footer-ressources h1, .footer-propos h1 {
+.footer-renovation h1,
+.footer-energie h1,
+.footer-adaptation h1,
+.footer-ressources h1,
+.footer-propos h1 {
   color: #E7F9EA;
   font-size: 16px;
   gap: 8px;
 }
-.footer-renovation span, .footer-energie span, .footer-adaptation span, .footer-ressources span, .footer-propos span {
+.footer-renovation span,
+.footer-energie span,
+.footer-adaptation span,
+.footer-ressources span,
+.footer-propos span {
   color: #D4D4D4;
   font-size: 18px;
   gap: 8px;
@@ -595,14 +664,20 @@ a {
 
 .bottom-footer {
   display: flex;
-  width: 1384px;
-  height: 29px;
+  width: 100%;
+  /* S'étend sur toute la largeur */
+  height: auto;
+  /* Permet à la hauteur de s'ajuster */
   justify-content: space-between;
+  flex-wrap: wrap;
+  /* Permet de passer à la ligne si nécessaire */
+  padding: 0 16px;
+  /* Ajouter un padding */
 }
 
 .bottom-footer-mot {
   display: flex;
-  gap: 16px;
+  gap: 8px;
   justify-content: center;
 }
 
@@ -611,9 +686,44 @@ a {
   text-decoration: none;
   font-size: 16px;
   padding: 0 10px;
-  border-right: 1px solid #404040; /* Ligne de séparation à droite de chaque lien */
+  border-right: 1px solid #404040;
+  /* Ligne de séparation à droite de chaque lien */
 }
 
 .bottom-footer-mot a:last-child {
-  border-right: none; /* Pas de bordure pour le dernier lien */
+  border-right: none;
+  /* Pas de bordure pour le dernier lien */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 32px 16px;
+    gap: 16px;
+  }
+  .container-footer,
+  .bottom-footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Centre les éléments */
+    text-align: center;
+  }
+  .container-footer h1,
+  .bottom-footer h1 {
+    font-size: 18px;
+  }
+  .container-footer span,
+  .bottom-footer span {
+    font-size: 14px;
+  }
+  .bottom-footer-mot {
+    padding: 18px;
+    gap: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .bottom-footer-mot a {
+    border-right: none;
+    /* Supprime les bordures à droite pour les petits écrans */
+  }
 }/*# sourceMappingURL=app.css.map */
