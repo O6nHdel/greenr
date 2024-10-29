@@ -120,17 +120,22 @@
         display: block; /* Affiche le burger */
     }
 
+    .navbar-dropdown{
+        margin-top: 20px;
+    }
+
     /* Affichage du menu quand on clique sur le burger */
     .navbar-links.is-active {
         display: flex; /* Affiche les liens de navigation sous forme de colonne */
         flex-direction: column;
         gap: 16px;
         position: absolute;
-        top: 60px; /* Ajuste la position en dessous de la navbar */
+        top: 80px; /* Ajuste la position en dessous de la navbar */
         right: 0;
         width: 100%;
         background-color: #dadada;
         padding: 16px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le dropdown */
+        
     }
 }

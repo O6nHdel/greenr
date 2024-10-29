@@ -132,13 +132,16 @@ a {
   .navbar-burger {
     display: block; /* Affiche le burger */
   }
+  .navbar-dropdown {
+    margin-top: 20px;
+  }
   /* Affichage du menu quand on clique sur le burger */
   .navbar-links.is-active {
     display: flex; /* Affiche les liens de navigation sous forme de colonne */
     flex-direction: column;
     gap: 16px;
     position: absolute;
-    top: 60px; /* Ajuste la position en dessous de la navbar */
+    top: 80px; /* Ajuste la position en dessous de la navbar */
     right: 0;
     width: 100%;
     background-color: #dadada;
@@ -347,6 +350,9 @@ a {
 }
 
 @media (max-width: 768px) {
+  .list-logo {
+    justify-content: center;
+  }
   .logo-suravenir {
     display: none;
   }
@@ -357,6 +363,9 @@ a {
     display: none;
   }
   .logo-bpce {
+    display: none;
+  }
+  .logo-thelem {
     display: none;
   }
 }
@@ -373,20 +382,30 @@ a {
 .element-left {
   height: 478px;
   width: 360px;
-  justify-content: space-between;
+  justify-content: center;
 }
 .element-left .section-renovation,
 .element-left .section-energie,
 .element-left .section-adaptation {
   display: flex; /* Ajoute display flex ici si nécessaire */
   flex-direction: column; /* Pour aligner les sections verticalement */
-  align-items: center;
+  align-items: flex-start;
   width: 360px;
   height: 132px;
   border-radius: 12px;
   padding: 24px;
   gap: 8px;
   margin-bottom: 41px;
+}
+.element-left .section-renovation h1,
+.element-left .section-energie h1,
+.element-left .section-adaptation h1 {
+  margin-bottom: 1px; /* Réduit l'écart */
+}
+.element-left .section-renovation p,
+.element-left .section-energie p,
+.element-left .section-adaptation p {
+  margin-top: -10px; /* Réduit l'écart */
 }
 .element-left .section-renovation:hover,
 .element-left .section-energie:hover,
@@ -482,6 +501,9 @@ a {
     min-height: 787px;
     overflow-y: auto;
   }
+  .text-info {
+    bottom: 0%;
+  }
   .element-right-info {
     width: 100%; /* Utilise 100% de la largeur pour le texte */
     height: auto; /* Ajuste la hauteur automatiquement */
@@ -516,7 +538,7 @@ a {
   .section-renovation:hover,
   .section-energie:hover,
   .section-adaptation:hover {
-    background-color: rgba(255, 255, 255, 0.7137254902);
+    background-color: rgba(85, 85, 85, 0.4941176471);
   }
   .info-button {
     display: flex;
@@ -526,7 +548,7 @@ a {
     justify-content: center;
     font-weight: 500;
     transition: all 0.5s;
-    margin-top: 20px; /* Ajoutez un espacement au-dessus du bouton */
+    margin-top: 40px;
     border: 1px solid #2E2E2E;
     color: #2E2E2E;
   }

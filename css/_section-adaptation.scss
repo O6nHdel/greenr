@@ -11,7 +11,7 @@
 .element-left{
     height: 478px;
     width: 360px;
-    justify-content: space-between;
+    justify-content: center;
     
     
     .section-renovation,
@@ -19,13 +19,21 @@
     .section-adaptation{
         display: flex; /* Ajoute display flex ici si nécessaire */
         flex-direction: column; /* Pour aligner les sections verticalement */
-        align-items: center;
+        align-items: flex-start;
         width: 360px;
         height: 132px;
         border-radius: 12px;
         padding: 24px;
         gap: 8px;
         margin-bottom: 41px; 
+        h1 {
+            margin-bottom: 1px; /* Réduit l'écart */
+        }
+    
+        p {
+            margin-top: -10px; /* Réduit l'écart */
+        }
+
         &:hover {
             background-color: #ffffffb6;
         }
@@ -126,6 +134,10 @@
         overflow-y: auto;
     }
 
+    .text-info{
+        bottom: 0%;
+    }
+
     .element-right-info {
         width: 100%; /* Utilise 100% de la largeur pour le texte */
         height: auto; /* Ajuste la hauteur automatiquement */
@@ -162,7 +174,7 @@
         background-color: #f0f0f0; /* Exemple de couleur d'arrière-plan */
         
         &:hover {
-            background-color: #ffffffb6;
+            background-color: #5555557e;
         }
     }
 
@@ -174,7 +186,7 @@
         justify-content: center;
         font-weight: 500;
         transition: all 0.5s;
-        margin-top: 20px; /* Ajoutez un espacement au-dessus du bouton */
+        margin-top: 40px; 
         border: 1px solid #2E2E2E;
         color: #2E2E2E;
     }

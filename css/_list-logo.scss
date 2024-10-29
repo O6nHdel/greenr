@@ -66,6 +66,9 @@
 
 
 @media (max-width: 768px){
+    .list-logo{
+        justify-content: center;
+    }
     .logo-suravenir{
         display: none;
     }
@@ -78,6 +81,10 @@
         display: none;
     }
     .logo-bpce{
+        display: none;
+    }
+
+    .logo-thelem{
         display: none;
     }
 }
