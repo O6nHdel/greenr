@@ -11,7 +11,7 @@
 .element-left{
     height: 478px;
     width: 360px;
-    justify-content: space-between;
+    justify-content: center;
     
     
     .section-renovation,
@@ -19,13 +19,21 @@
     .section-adaptation{
         display: flex; /* Ajoute display flex ici si nécessaire */
         flex-direction: column; /* Pour aligner les sections verticalement */
-        align-items: center;
+        align-items: flex-start;
         width: 360px;
         height: 132px;
         border-radius: 12px;
         padding: 24px;
         gap: 8px;
         margin-bottom: 41px; 
+        h1 {
+            margin-bottom: 1px; /* Réduit l'écart */
+        }
+    
+        p {
+            margin-top: -10px; /* Réduit l'écart */
+        }
+
         &:hover {
             background-color: #ffffffb6;
         }
@@ -97,4 +105,89 @@
     width: 100%; // Utilise 100% de la largeur du conteneur
     height: 100%; // Ajuste la hauteur automatiquement
     object-fit: cover; // Maintient l'aspect ratio de l'image
+}
+
+
+
+/* Media Query pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+    .section-info {
+        margin-top: 50px;
+        flex-direction: column; /* Change la direction en colonne */
+        align-items: center; /* Centre les éléments */
+        padding: 24px; /* Réduis le padding pour les petits écrans */
+        border: none; /* Enlève la bordure */
+    }
+
+    .element-left,
+    .element-right {
+        width: 100%; /* Prend 100% de la largeur du conteneur */
+        height: auto; /* Laisse la hauteur s'ajuster */
+    }
+
+    .element-right {
+        display: flex;
+        flex-direction: column-reverse; /* Aligne les éléments en colonne */
+        align-items: center; /* Centre les éléments à l'intérieur */
+        justify-content: flex-end;
+        min-height: 787px;
+        overflow-y: auto;
+    }
+
+    .text-info{
+        bottom: 0%;
+    }
+
+    .element-right-info {
+        width: 100%; /* Utilise 100% de la largeur pour le texte */
+        height: auto; /* Ajuste la hauteur automatiquement */
+    }
+
+    .element-right-image {
+        width: 100%; /* Utilise 100% de la largeur pour l'image */
+        height: auto; /* Ajuste la hauteur automatiquement */
+    }
+
+    .element-left {
+        align-items: center;
+        display: flex;
+        p {
+            display: none; /* Cache les paragraphes si besoin */
+        }
+    }
+
+    /* Styles modifiés pour les sections de rénovation, énergie et adaptation */
+    .section-renovation,
+    .section-energie,
+    .section-adaptation {
+        width: 114px;
+        height: 56px;
+        align-items: center;
+        width: 100%; /* Change la largeur pour s'adapter à l'écran */
+        height: auto; /* Laisse la hauteur s'ajuster automatiquement */
+        border-radius: 12px;
+        padding: 8px; /* Ajuste le padding pour petits écrans */
+        gap: 8px;
+        margin-bottom: 20px; /* Ajuste l'espacement entre les sections */
+        
+        /* Optionnel : Ajoute une couleur d'arrière-plan pour mieux visualiser */
+        background-color: #f0f0f0; /* Exemple de couleur d'arrière-plan */
+        
+        &:hover {
+            background-color: #5555557e;
+        }
+    }
+
+    .info-button {
+        display: flex;
+        position: relative; 
+        padding: 10px 15px;
+        border-radius: 8px;
+        justify-content: center;
+        font-weight: 500;
+        transition: all 0.5s;
+        margin-top: 40px; 
+        border: 1px solid #2E2E2E;
+        color: #2E2E2E;
+    }
 }

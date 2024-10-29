@@ -1,37 +1,50 @@
 .footer {
     display: flex;
-    flex-direction: column;    // Affiche les éléments internes en colonne
-    align-items: center;       // Centre .footer-border horizontalement
-    height: 428px;
+    flex-direction: column;
+    /* Affiche les éléments internes en colonne */
+    align-items: center;
+    /* Centre .footer-border horizontalement */
     padding: 64px 64px 32px 64px;
+    /* Réduit la hauteur en fonction du contenu */
     gap: 32px;
     background-color: #1F1F1F;
+    width: 100%;
+    /* S'assure que le footer prend toute la largeur */
+    box-sizing: border-box;
+    /* Inclut le padding et les bordures dans la largeur */
 }
-
-
 
 
 .container-footer {
-    display: flex;               // Affiche .footer-renovation et .footer-energie en ligne
-    gap: 32px;                   // Espacement entre les deux sections
-    width: 100%;                 // S'étend sur toute la largeur
+    display: flex;
+    /* Affiche .footer-renovation et .footer-energie en ligne */
+    gap: 32px;
+    /* Espacement entre les deux sections */
+    width: 100%;
+    /* S'étend sur toute la largeur */
     justify-content: space-between;
 }
 
-.footer-renovation, .footer-energie, .footer-adaptation, .footer-ressources, .footer-propos {
+.footer-renovation,
+.footer-energie,
+.footer-adaptation,
+.footer-ressources,
+.footer-propos {
     display: flex;
-    flex-direction: column;      // Garde les éléments internes en colonne
-    gap: 8px;                    // Séparation entre les éléments internes
+    flex-direction: column;
+    /* Garde les éléments internes en colonne */
+    gap: 8px;
+    /* Séparation entre les éléments internes */
     font-size: 18px;
     font-weight: 400;
 
-    h1{
+    h1 {
         color: #E7F9EA;
         font-size: 16px;
         gap: 8px;
     }
 
-    span{
+    span {
         color: #D4D4D4;
         font-size: 18px;
         gap: 8px;
@@ -40,22 +53,28 @@
 
 .footer-border {
     margin-top: 40px;
-    width: 100%;                 // Prend toute la largeur du footer
-    max-width: 1384px;           // Limite la largeur maximale
+    width: 100%; // Prend toute la largeur du footer
+    max-width: 1384px; // Limite la largeur maximale
     border: 1px solid #404040;
 }
 
-.bottom-footer{
+.bottom-footer {
     display: flex;
-    width: 1384px;
-    height: 29px;
+    width: 100%;
+    /* S'étend sur toute la largeur */
+    height: auto;
+    /* Permet à la hauteur de s'ajuster */
     justify-content: space-between;
+    flex-wrap: wrap;
+    /* Permet de passer à la ligne si nécessaire */
+    padding: 0 16px;
+    /* Ajouter un padding */
 }
 
 
 .bottom-footer-mot {
     display: flex;
-    gap: 16px;
+    gap: 8px;
     justify-content: center;
 }
 
@@ -64,9 +83,47 @@
     text-decoration: none;
     font-size: 16px;
     padding: 0 10px;
-    border-right: 1px solid #404040; /* Ligne de séparation à droite de chaque lien */
+    border-right: 1px solid #404040;
+    /* Ligne de séparation à droite de chaque lien */
 }
 
 .bottom-footer-mot a:last-child {
-    border-right: none; /* Pas de bordure pour le dernier lien */
+    border-right: none;
+    /* Pas de bordure pour le dernier lien */
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 32px 16px;
+        gap: 16px;
+    }
+
+    .container-footer,
+    .bottom-footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* Centre les éléments */
+        text-align: center;
+
+        h1 {
+            font-size: 18px;
+        }
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .bottom-footer-mot {
+        padding: 18px;
+        gap: 18px;
+        display: flex;
+        flex-direction: column;
+
+        a {
+            border-right: none;
+            /* Supprime les bordures à droite pour les petits écrans */
+        }
+    }
 }

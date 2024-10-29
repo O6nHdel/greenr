@@ -6,11 +6,8 @@
     margin-top: 60px;
     padding: 20px;
 
-    .img-left {
-        flex-shrink: 0; // Empêche l'image de rétrécir
-    }
 
-    .test-img {
+    .maison-img {
         border-radius: 16px;
         width: 500px;
         height: 390px;
@@ -71,5 +68,41 @@
                 }
             }
         }
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Styles pour les écrans plus petits */
+    .card {
+        display: flex;
+        flex-direction: column; /* Colonne sur les petits écrans */
+        align-items: center;
+    }
+
+    .card .card-right{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .maison-img {
+        width: 100%; /* Prend toute la largeur de l’écran */
+        height: auto; /* Ajuste la hauteur pour garder le ratio */
+        border-radius: 16px ;
+    }
+
+    .card-right {
+        display: flex;
+        flex-direction: column; /* Empile les cartes verticalement */
+        margin-top: 20px;
+        width: 100%; /* Prend toute la largeur de l'écran */
+    }
+
+    .card-renovation,
+    .card-energie,
+    .card-adaptation {
+        width: 100%; /* Prend toute la largeur disponible */
+        height: auto; /* Ajuste la hauteur automatiquement */
+        
     }
 }

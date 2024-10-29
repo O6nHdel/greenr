@@ -18,32 +18,49 @@ a {
   text-decoration: none;
 }
 
+/* Styles de la navbar */
 .navbar {
   height: 98px;
-  background: red;
+  background-color: #dadada;
+  position: relative; /* Position relative pour le menu déroulant */
 }
+
+/* Contenu de la navbar */
 .navbar-content {
   height: inherit;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 32px 24px 32px;
+  padding: 24px 32px;
 }
+
+/* Liens de navigation */
 .navbar-links {
   display: flex;
   gap: 32px;
   font-weight: 500;
   color: #404040;
 }
+
+/* Logo et menu à gauche */
 .navbar-left {
   display: flex;
   align-items: center;
   gap: 48px;
 }
+
+/* Boutons à droite */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Styles pour les boutons */
 .navbar-buttons {
   display: flex;
   gap: 16px;
 }
+
 .navbar-button {
   display: flex;
   align-items: center;
@@ -71,12 +88,76 @@ a {
   background-color: #01994d;
 }
 
-.main {
-  padding: 64px;
+/* Styles du menu burger */
+.navbar-burger {
+  display: none; /* Masqué par défaut */
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px;
+  color: #404040;
 }
 
-.section {
-  background-color: green;
+/* Styles pour le menu déroulant */
+.navbar-dropdown {
+  display: none; /* Masqué par défaut */
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* Ajuste la position en dessous de la navbar */
+  right: 0;
+  width: 100%;
+  background-color: #dadada;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le dropdown */
+  z-index: 1000; /* Assure que le dropdown est au-dessus des autres éléments */
+}
+
+/* Affichage du menu déroulant quand actif */
+.navbar-dropdown.active {
+  display: flex; /* Affiche le menu */
+}
+
+/* Styles pour petits écrans */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 16px;
+  }
+  .navbar-content {
+    padding: 8px;
+    justify-content: space-between; /* Le logo reste à gauche et le burger à droite */
+  }
+  .navbar-links, .navbar-buttons {
+    display: none; /* Cache les liens de navigation */
+  }
+  .navbar-burger {
+    display: block; /* Affiche le burger */
+  }
+  .navbar-dropdown {
+    margin-top: 20px;
+  }
+  /* Affichage du menu quand on clique sur le burger */
+  .navbar-links.is-active {
+    display: flex; /* Affiche les liens de navigation sous forme de colonne */
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    top: 80px; /* Ajuste la position en dessous de la navbar */
+    right: 0;
+    width: 100%;
+    background-color: #dadada;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le dropdown */
+  }
+}
+.main {
+  padding: 64px;
+  background-color: #dadada;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 24px;
+  }
 }
 .section-content {
   display: flex;
@@ -108,56 +189,563 @@ a {
   font-weight: 400;
 }
 
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column;
+  }
+}
 .card {
+  display: flex;
+  align-items: flex-start;
   border-radius: 10px;
   overflow: hidden;
   margin-top: 60px;
-  background-color: aqua;
+  padding: 20px;
+}
+.card .maison-img {
+  border-radius: 16px;
+  width: 500px;
+  height: 390px;
+  object-fit: cover;
+}
+.card .card-right {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-left: 20px;
+}
+.card .card-right .card-renovation,
+.card .card-right .card-energie,
+.card .card-right .card-adaptation {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 270px;
+  height: 390px;
+  padding: 20px;
+}
+.card .card-right .card-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.card .card-right .card-button {
+  margin-top: auto;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.5s;
+}
+.card .card-right .card-button-primary {
+  margin-top: 70px;
+  border: 1px solid #2E2E2E;
+  color: #2E2E2E;
+}
+.card .card-right .card-button-primary:hover {
+  border-color: #005e00;
+  color: #005e00;
+}
+.card .card-right .card-button-secondary {
+  color: #2E2E2E;
+}
+.card .card-right .card-button-secondary:hover {
+  background-color: #defdde;
+  color: #003f00;
 }
 
-.test-img {
+@media (max-width: 768px) {
+  /* Styles pour les écrans plus petits */
+  .card {
+    display: flex;
+    flex-direction: column; /* Colonne sur les petits écrans */
+    align-items: center;
+  }
+  .card .card-right {
+    flex-direction: column;
+    align-items: center;
+  }
+  .maison-img {
+    width: 100%; /* Prend toute la largeur de l’écran */
+    height: auto; /* Ajuste la hauteur pour garder le ratio */
+    border-radius: 16px;
+  }
+  .card-right {
+    display: flex;
+    flex-direction: column; /* Empile les cartes verticalement */
+    margin-top: 20px;
+    width: 100%; /* Prend toute la largeur de l'écran */
+  }
+  .card-renovation,
+  .card-energie,
+  .card-adaptation {
+    width: 100%; /* Prend toute la largeur disponible */
+    height: auto; /* Ajuste la hauteur automatiquement */
+  }
+}
+.list-logo {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centre verticalement */
+  height: 48px; /* Hauteur fixe pour le conteneur */
+  gap: 80px; /* Espacement entre les logos */
+}
+
+.list-logo img {
+  height: auto; /* Hauteur automatique pour conserver le ratio */
+  max-height: 90%; /* Ne pas dépasser la hauteur du conteneur */
+}
+
+/* Styles spécifiques pour chaque logo */
+.logo-az {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 40px; /* Largeur spécifique pour le logo AZ */
+  height: 30px;
+}
+
+.logo-brgm {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 124px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+}
+
+.logo-banque-postale {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 69px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+}
+
+.logo-thelem {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 102px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+  fill: gray;
+}
+
+.logo-bpce {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 127px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+}
+
+.logo-ign {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 58px; /* Largeur spécifique pour le logo AZ */
+  height: 27px;
+}
+
+.logo-credit-mutuel {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 227px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+}
+
+.logo-suravenir {
+  filter: grayscale(100%); /* Rend toutes les images en gris */
+  width: 133px; /* Largeur spécifique pour le logo AZ */
+  height: 48px;
+}
+
+@media (max-width: 768px) {
+  .list-logo {
+    justify-content: center;
+  }
+  .logo-suravenir {
+    display: none;
+  }
+  .logo-credit-mutuel {
+    display: none;
+  }
+  .logo-ign {
+    display: none;
+  }
+  .logo-bpce {
+    display: none;
+  }
+  .logo-thelem {
+    display: none;
+  }
+}
+.section-info {
+  display: flex;
+  margin-top: 200px;
+  height: 574px;
+  border: 1.5px solid #2E2E2E;
+  border-radius: 32px;
+  padding: 48px;
+  justify-content: space-between;
+}
+
+.element-left {
+  height: 478px;
+  width: 360px;
+  justify-content: center;
+}
+.element-left .section-renovation,
+.element-left .section-energie,
+.element-left .section-adaptation {
+  display: flex; /* Ajoute display flex ici si nécessaire */
+  flex-direction: column; /* Pour aligner les sections verticalement */
+  align-items: flex-start;
+  width: 360px;
+  height: 132px;
+  border-radius: 12px;
+  padding: 24px;
+  gap: 8px;
+  margin-bottom: 41px;
+}
+.element-left .section-renovation h1,
+.element-left .section-energie h1,
+.element-left .section-adaptation h1 {
+  margin-bottom: 1px; /* Réduit l'écart */
+}
+.element-left .section-renovation p,
+.element-left .section-energie p,
+.element-left .section-adaptation p {
+  margin-top: -10px; /* Réduit l'écart */
+}
+.element-left .section-renovation:hover,
+.element-left .section-energie:hover,
+.element-left .section-adaptation:hover {
+  background-color: rgba(255, 255, 255, 0.7137254902);
+}
+
+.element-right {
+  display: flex;
+  background-color: #ffffff;
   border-radius: 16px;
-  width: 507px;
-  height: 395px;
+  padding: 32px;
+  gap: 40px;
+  width: 872px;
+  height: 478px;
+  align-items: center;
+}
+
+.element-right-info {
+  position: relative;
+  width: 380px;
+  height: 414px;
+  gap: 40px;
+}
+
+.title-info {
+  height: 132px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.text-info {
+  height: 114px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.title-effect-purple {
+  position: relative;
+  font-weight: 700;
+  color: #7C5AD3;
+}
+
+.info-button {
+  position: absolute;
+  bottom: 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.5s;
+  margin-top: 70px;
+  border: 1px solid #2E2E2E;
+  color: #2E2E2E;
+}
+.info-button:hover {
+  border-color: #005e00;
+  color: #005e00;
+}
+
+.element-right-image {
+  position: relative;
+  width: 388px;
+  height: 414px;
+}
+
+.foret-img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.card-right {
-  display: flex; /* Utilise flexbox pour disposer les cartes */
-  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne si l'espace est insuffisant */
-  justify-content: space-between; /* Espace entre les cartes */
-  padding: 20px; /* Espace autour du conteneur */
+/* Media Query pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+  .section-info {
+    margin-top: 50px;
+    flex-direction: column; /* Change la direction en colonne */
+    align-items: center; /* Centre les éléments */
+    padding: 24px; /* Réduis le padding pour les petits écrans */
+    border: none; /* Enlève la bordure */
+  }
+  .element-left,
+  .element-right {
+    width: 100%; /* Prend 100% de la largeur du conteneur */
+    height: auto; /* Laisse la hauteur s'ajuster */
+  }
+  .element-right {
+    display: flex;
+    flex-direction: column-reverse; /* Aligne les éléments en colonne */
+    align-items: center; /* Centre les éléments à l'intérieur */
+    justify-content: flex-end;
+    min-height: 787px;
+    overflow-y: auto;
+  }
+  .text-info {
+    bottom: 0%;
+  }
+  .element-right-info {
+    width: 100%; /* Utilise 100% de la largeur pour le texte */
+    height: auto; /* Ajuste la hauteur automatiquement */
+  }
+  .element-right-image {
+    width: 100%; /* Utilise 100% de la largeur pour l'image */
+    height: auto; /* Ajuste la hauteur automatiquement */
+  }
+  .element-left {
+    align-items: center;
+    display: flex;
+  }
+  .element-left p {
+    display: none; /* Cache les paragraphes si besoin */
+  }
+  /* Styles modifiés pour les sections de rénovation, énergie et adaptation */
+  .section-renovation,
+  .section-energie,
+  .section-adaptation {
+    width: 114px;
+    height: 56px;
+    align-items: center;
+    width: 100%; /* Change la largeur pour s'adapter à l'écran */
+    height: auto; /* Laisse la hauteur s'ajuster automatiquement */
+    border-radius: 12px;
+    padding: 8px; /* Ajuste le padding pour petits écrans */
+    gap: 8px;
+    margin-bottom: 20px; /* Ajuste l'espacement entre les sections */
+    /* Optionnel : Ajoute une couleur d'arrière-plan pour mieux visualiser */
+    background-color: #f0f0f0; /* Exemple de couleur d'arrière-plan */
+  }
+  .section-renovation:hover,
+  .section-energie:hover,
+  .section-adaptation:hover {
+    background-color: rgba(85, 85, 85, 0.4941176471);
+  }
+  .info-button {
+    display: flex;
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 8px;
+    justify-content: center;
+    font-weight: 500;
+    transition: all 0.5s;
+    margin-top: 40px;
+    border: 1px solid #2E2E2E;
+    color: #2E2E2E;
+  }
+}
+.element-savoir {
+  display: flex;
+  margin-top: 100px;
+  height: 216px;
+  border-radius: 24px;
+  justify-content: space-between;
+  padding: 64px;
+  background-color: #E7F9EA;
 }
 
-.card-renovation {
-  background-color: white; /* Couleur de fond de la carte */
-  border-radius: 16px; /* Bord arrondi */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
-  overflow: hidden; /* Cache les débordements */
-  width: 270px; /* Largeur fixe pour les cartes */
-  height: 390px; /* Hauteur fixe pour les cartes */
-  margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
-  padding: 20px; /* Espacement à l'intérieur de la carte */
+.title-savoir {
+  font-weight: bold;
+  font-size: 36px;
+  color: #004D26;
+}
+.title-savoir .effect-green {
+  color: #00BD5E;
 }
 
-.card-energie {
-  background-color: white; /* Couleur de fond de la carte */
-  border-radius: 16px; /* Bord arrondi */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
-  overflow: hidden; /* Cache les débordements */
-  width: 270px; /* Largeur fixe pour les cartes */
-  height: 390px; /* Hauteur fixe pour les cartes */
-  margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
-  padding: 20px; /* Espacement à l'intérieur de la carte */
+.button-savoir {
+  width: 258px;
+  height: 56px;
+  padding: 24px; /* Ajout du padding */
+  display: flex;
+  align-items: center; /* Centre le texte verticalement */
+  justify-content: center; /* Centre le texte horizontalement */
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: #00BD5E;
+  color: #FAFAFA;
+  transition: background-color 0.5s;
+}
+.button-savoir:hover {
+  background-color: #01994d;
 }
 
-.card-adaptation {
-  background-color: white; /* Couleur de fond de la carte */
-  border-radius: 16px; /* Bord arrondi */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
-  overflow: hidden; /* Cache les débordements */
-  width: 270px; /* Largeur fixe pour les cartes */
-  height: 390px; /* Hauteur fixe pour les cartes */
-  margin: 0; /* Enlève la marge autour des cartes, car on utilise le gap */
-  padding: 20px; /* Espacement à l'intérieur de la carte */
+@media (max-width: 768px) {
+  .element-savoir {
+    margin-top: 500px; /* Ajustez si nécessaire */
+    height: auto; /* Laisse la hauteur s'ajuster */
+    flex-direction: column; /* Change la direction en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    padding: 32px; /* Réduire le padding pour les petits écrans */
+    background-color: #004D26;
+  }
+  .title-savoir {
+    font-size: 28px;
+    color: #FAFAFA;
+    gap: 16px;
+  }
+  .title-savoir .effect-green {
+    color: #B1F6BD;
+  }
+  .text-savoir {
+    margin-top: 20px;
+    color: #FAFAFA;
+    font-size: 18px;
+    text-align: center; /* Centre le texte */
+  }
+  .button-savoir {
+    display: flex;
+    background-color: #B1F6BD;
+    color: #004D26;
+    margin-top: 20px; /* Ajoute un espacement au-dessus du bouton */
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  /* Affiche les éléments internes en colonne */
+  align-items: center;
+  /* Centre .footer-border horizontalement */
+  padding: 64px 64px 32px 64px;
+  /* Réduit la hauteur en fonction du contenu */
+  gap: 32px;
+  background-color: #1F1F1F;
+  width: 100%;
+  /* S'assure que le footer prend toute la largeur */
+  box-sizing: border-box;
+  /* Inclut le padding et les bordures dans la largeur */
+}
+
+.container-footer {
+  display: flex;
+  /* Affiche .footer-renovation et .footer-energie en ligne */
+  gap: 32px;
+  /* Espacement entre les deux sections */
+  width: 100%;
+  /* S'étend sur toute la largeur */
+  justify-content: space-between;
+}
+
+.footer-renovation,
+.footer-energie,
+.footer-adaptation,
+.footer-ressources,
+.footer-propos {
+  display: flex;
+  flex-direction: column;
+  /* Garde les éléments internes en colonne */
+  gap: 8px;
+  /* Séparation entre les éléments internes */
+  font-size: 18px;
+  font-weight: 400;
+}
+.footer-renovation h1,
+.footer-energie h1,
+.footer-adaptation h1,
+.footer-ressources h1,
+.footer-propos h1 {
+  color: #E7F9EA;
+  font-size: 16px;
+  gap: 8px;
+}
+.footer-renovation span,
+.footer-energie span,
+.footer-adaptation span,
+.footer-ressources span,
+.footer-propos span {
+  color: #D4D4D4;
+  font-size: 18px;
+  gap: 8px;
+}
+
+.footer-border {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1384px;
+  border: 1px solid #404040;
+}
+
+.bottom-footer {
+  display: flex;
+  width: 100%;
+  /* S'étend sur toute la largeur */
+  height: auto;
+  /* Permet à la hauteur de s'ajuster */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* Permet de passer à la ligne si nécessaire */
+  padding: 0 16px;
+  /* Ajouter un padding */
+}
+
+.bottom-footer-mot {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.bottom-footer-mot a {
+  color: #D4D4D4;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 0 10px;
+  border-right: 1px solid #404040;
+  /* Ligne de séparation à droite de chaque lien */
+}
+
+.bottom-footer-mot a:last-child {
+  border-right: none;
+  /* Pas de bordure pour le dernier lien */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 32px 16px;
+    gap: 16px;
+  }
+  .container-footer,
+  .bottom-footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Centre les éléments */
+    text-align: center;
+  }
+  .container-footer h1,
+  .bottom-footer h1 {
+    font-size: 18px;
+  }
+  .container-footer span,
+  .bottom-footer span {
+    font-size: 14px;
+  }
+  .bottom-footer-mot {
+    padding: 18px;
+    gap: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .bottom-footer-mot a {
+    border-right: none;
+    /* Supprime les bordures à droite pour les petits écrans */
+  }
 }/*# sourceMappingURL=app.css.map */

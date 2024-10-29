@@ -62,3 +62,29 @@
     width: 133px; /* Largeur spécifique pour le logo AZ */
     height: 48px;
 }
+
+
+
+@media (max-width: 768px){
+    .list-logo{
+        justify-content: center;
+    }
+    .logo-suravenir{
+        display: none;
+    }
+
+    .logo-credit-mutuel{
+        display: none;
+    }
+
+    .logo-ign{
+        display: none;
+    }
+    .logo-bpce{
+        display: none;
+    }
+
+    .logo-thelem{
+        display: none;
+    }
+}
