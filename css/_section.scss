@@ -37,3 +37,9 @@
         font-weight: 400;
     }
 }
+
+@media (max-width: 768px){
+    .section-content{
+        flex-direction: column;
+    }
+}

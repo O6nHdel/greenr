@@ -18,32 +18,49 @@ a {
   text-decoration: none;
 }
 
+/* Styles de la navbar */
 .navbar {
   height: 98px;
   background-color: #dadada;
+  position: relative; /* Position relative pour le menu déroulant */
 }
+
+/* Contenu de la navbar */
 .navbar-content {
   height: inherit;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 32px 24px 32px;
+  padding: 24px 32px;
 }
+
+/* Liens de navigation */
 .navbar-links {
   display: flex;
   gap: 32px;
   font-weight: 500;
   color: #404040;
 }
+
+/* Logo et menu à gauche */
 .navbar-left {
   display: flex;
   align-items: center;
   gap: 48px;
 }
+
+/* Boutons à droite */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Styles pour les boutons */
 .navbar-buttons {
   display: flex;
   gap: 16px;
 }
+
 .navbar-button {
   display: flex;
   align-items: center;
@@ -71,6 +88,64 @@ a {
   background-color: #01994d;
 }
 
+/* Styles du menu burger */
+.navbar-burger {
+  display: none; /* Masqué par défaut */
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px;
+  color: #404040;
+}
+
+/* Styles pour le menu déroulant */
+.navbar-dropdown {
+  display: none; /* Masqué par défaut */
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* Ajuste la position en dessous de la navbar */
+  right: 0;
+  width: 100%;
+  background-color: #dadada;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le dropdown */
+  z-index: 1000; /* Assure que le dropdown est au-dessus des autres éléments */
+}
+
+/* Affichage du menu déroulant quand actif */
+.navbar-dropdown.active {
+  display: flex; /* Affiche le menu */
+}
+
+/* Styles pour petits écrans */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 16px;
+  }
+  .navbar-content {
+    padding: 8px;
+    justify-content: space-between; /* Le logo reste à gauche et le burger à droite */
+  }
+  .navbar-links, .navbar-buttons {
+    display: none; /* Cache les liens de navigation */
+  }
+  .navbar-burger {
+    display: block; /* Affiche le burger */
+  }
+  /* Affichage du menu quand on clique sur le burger */
+  .navbar-links.is-active {
+    display: flex; /* Affiche les liens de navigation sous forme de colonne */
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    top: 60px; /* Ajuste la position en dessous de la navbar */
+    right: 0;
+    width: 100%;
+    background-color: #dadada;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le dropdown */
+  }
+}
 .main {
   padding: 64px;
   background-color: #dadada;
@@ -106,6 +181,11 @@ a {
   font-weight: 400;
 }
 
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column;
+  }
+}
 .card {
   display: flex;
   align-items: flex-start;
@@ -117,7 +197,7 @@ a {
 .card .img-left {
   flex-shrink: 0;
 }
-.card .test-img {
+.card .maison-img {
   border-radius: 16px;
   width: 500px;
   height: 390px;
@@ -171,6 +251,38 @@ a {
   color: #003f00;
 }
 
+@media (max-width: 768px) {
+  /* Styles pour les écrans plus petits */
+  .card {
+    display: flex;
+    flex-direction: column; /* Colonne sur les petits écrans */
+    align-items: center;
+  }
+  .card .card-right {
+    flex-direction: column;
+    align-items: center;
+  }
+  .maison-img {
+    width: 100%; /* Prend toute la largeur de l’écran */
+    height: auto; /* Ajuste la hauteur pour garder le ratio */
+    max-width: 342px; /* Largeur maximale pour éviter d'être trop grand */
+  }
+  .card-right {
+    display: flex;
+    flex-direction: column; /* Empile les cartes verticalement */
+    margin-left: 0; /* Supprime le décalage latéral */
+    margin-top: 20px;
+    gap: 20px; /* Espacement entre les cartes */
+    width: 100%; /* Prend toute la largeur de l'écran */
+  }
+  .card-renovation,
+  .card-energie,
+  .card-adaptation {
+    width: 100%; /* Prend toute la largeur disponible */
+    max-width: 342px; /* Largeur maximale sur les petits écrans */
+    height: auto; /* Ajuste la hauteur automatiquement */
+  }
+}
 .list-logo {
   margin-top: 60px;
   display: flex;
@@ -235,6 +347,20 @@ a {
   height: 48px;
 }
 
+@media (max-width: 768px) {
+  .logo-suravenir {
+    display: none;
+  }
+  .logo-credit-mutuel {
+    display: none;
+  }
+  .logo-ign {
+    display: none;
+  }
+  .logo-bpce {
+    display: none;
+  }
+}
 .section-info {
   display: flex;
   margin-top: 200px;
@@ -335,6 +461,60 @@ a {
   object-fit: cover;
 }
 
+/* Media Query pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+  .section-info {
+    margin-top: 20px;
+    flex-direction: column; /* Change la direction en colonne */
+    align-items: center; /* Centre les éléments */
+    padding: 24px; /* Réduis le padding pour les petits écrans */
+    border: none; /* Enlève la bordure */
+  }
+  .element-left,
+  .element-right {
+    width: 100%; /* Prend 100% de la largeur du conteneur */
+    height: auto; /* Laisse la hauteur s'ajuster */
+  }
+  .element-right {
+    display: flex;
+    flex-direction: column-reverse; /* Aligne les éléments en colonne */
+    align-items: center; /* Centre les éléments à l'intérieur */
+  }
+  .element-right-info {
+    width: 100%; /* Utilise 100% de la largeur pour le texte */
+    height: auto; /* Ajuste la hauteur automatiquement */
+  }
+  .element-right-image {
+    width: 100%; /* Utilise 100% de la largeur pour l'image */
+    height: auto; /* Ajuste la hauteur automatiquement */
+  }
+  .element-left {
+    align-items: center;
+    display: flex;
+  }
+  .element-left p {
+    display: none; /* Cache les paragraphes si besoin */
+  }
+  /* Styles modifiés pour les sections de rénovation, énergie et adaptation */
+  .section-renovation,
+  .section-energie,
+  .section-adaptation {
+    align-items: center;
+    width: 100%; /* Change la largeur pour s'adapter à l'écran */
+    height: auto; /* Laisse la hauteur s'ajuster automatiquement */
+    border-radius: 12px;
+    padding: 8px; /* Ajuste le padding pour petits écrans */
+    gap: 8px;
+    margin-bottom: 20px; /* Ajuste l'espacement entre les sections */
+    /* Optionnel : Ajoute une couleur d'arrière-plan pour mieux visualiser */
+    background-color: #f0f0f0; /* Exemple de couleur d'arrière-plan */
+  }
+  .section-renovation:hover,
+  .section-energie:hover,
+  .section-adaptation:hover {
+    background-color: rgba(255, 255, 255, 0.7137254902);
+  }
+}
 .element-savoir {
   display: flex;
   margin-top: 100px;

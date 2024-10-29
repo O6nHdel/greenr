@@ -98,3 +98,66 @@
     height: 100%; // Ajuste la hauteur automatiquement
     object-fit: cover; // Maintient l'aspect ratio de l'image
 }
+
+
+
+/* Media Query pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+    .section-info {
+        margin-top: 20px;
+        flex-direction: column; /* Change la direction en colonne */
+        align-items: center; /* Centre les éléments */
+        padding: 24px; /* Réduis le padding pour les petits écrans */
+        border: none; /* Enlève la bordure */
+    }
+
+    .element-left,
+    .element-right {
+        width: 100%; /* Prend 100% de la largeur du conteneur */
+        height: auto; /* Laisse la hauteur s'ajuster */
+    }
+
+    .element-right {
+        display: flex;
+        flex-direction: column-reverse; /* Aligne les éléments en colonne */
+        align-items: center; /* Centre les éléments à l'intérieur */
+    }
+
+    .element-right-info {
+        width: 100%; /* Utilise 100% de la largeur pour le texte */
+        height: auto; /* Ajuste la hauteur automatiquement */
+    }
+
+    .element-right-image {
+        width: 100%; /* Utilise 100% de la largeur pour l'image */
+        height: auto; /* Ajuste la hauteur automatiquement */
+    }
+
+    .element-left {
+        align-items: center;
+        display: flex;
+        p {
+            display: none; /* Cache les paragraphes si besoin */
+        }
+    }
+
+    /* Styles modifiés pour les sections de rénovation, énergie et adaptation */
+    .section-renovation,
+    .section-energie,
+    .section-adaptation {
+        align-items: center;
+        width: 100%; /* Change la largeur pour s'adapter à l'écran */
+        height: auto; /* Laisse la hauteur s'ajuster automatiquement */
+        border-radius: 12px;
+        padding: 8px; /* Ajuste le padding pour petits écrans */
+        gap: 8px;
+        margin-bottom: 20px; /* Ajuste l'espacement entre les sections */
+        
+        /* Optionnel : Ajoute une couleur d'arrière-plan pour mieux visualiser */
+        background-color: #f0f0f0; /* Exemple de couleur d'arrière-plan */
+        
+        &:hover {
+            background-color: #ffffffb6;
+        }
+    }
+}

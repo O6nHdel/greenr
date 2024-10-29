@@ -1,65 +1,136 @@
+/* Styles de la navbar */
 .navbar {
-
     height: 98px;
     background-color: #dadada;
+    position: relative; /* Position relative pour le menu déroulant */
+}
 
-    &-content {
-        height: inherit;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 24px 32px 24px 32px;
-    }
+/* Contenu de la navbar */
+.navbar-content {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+}
 
-    &-links {
-        display: flex;
-        gap: 32px;
+/* Liens de navigation */
+.navbar-links {
+    display: flex;
+    gap: 32px;
+    font-weight: 500;
+    color: #404040;
+}
 
+/* Logo et menu à gauche */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+/* Boutons à droite */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Styles pour les boutons */
+.navbar-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.navbar-button {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    height: 50px;
+
+    &-secondary {
+        border: 1px solid #2E2E2E;
+        color: #2E2E2E;
         font-weight: 500;
-        color: #404040;
-    }
+        transition: border-color 0.5s, color 0.5s;
 
-    &-left {
-        display: flex;
-        align-items: center;
-
-        gap: 48px;
-    }
-
-    &-buttons {
-        display: flex;
-        gap: 16px;        
-    }
-
-    &-button {   
-        display: flex;
-        align-items: center;
-
-        padding: 20px;
-        border-radius: 8px;
-        height: 50px;
-
-        &-secondary {
-            border: 1px solid #2E2E2E;
-            color: #2E2E2E;
-            font-weight: 500;
-
-            transition: border-color .5s, color .5s;
-            &:hover {
-                border-color: #00BD5E;
-                color: #00BD5E;
-            }
+        &:hover {
+            border-color: #00BD5E;
+            color: #00BD5E;
         }
+    }
 
-        &-primary {
-            background-color: #00BD5E;
-            color: #FAFAFA;
-            font-weight: 600;
+    &-primary {
+        background-color: #00BD5E;
+        color: #FAFAFA;
+        font-weight: 600;
+        transition: background-color 0.5s;
 
-            transition: background-color .5s;
-            &:hover {
-                background-color: #01994d;
-            }
+        &:hover {
+            background-color: #01994d;
         }
+    }
+}
+
+/* Styles du menu burger */
+.navbar-burger {
+    display: none; /* Masqué par défaut */
+    font-size: 40px;
+    cursor: pointer;
+    padding: 10px;
+    color: #404040;
+}
+
+/* Styles pour le menu déroulant */
+.navbar-dropdown {
+    display: none; /* Masqué par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Ajuste la position en dessous de la navbar */
+    right: 0;
+    width: 100%;
+    background-color: #dadada;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le dropdown */
+    z-index: 1000; /* Assure que le dropdown est au-dessus des autres éléments */
+}
+
+/* Affichage du menu déroulant quand actif */
+.navbar-dropdown.active {
+    display: flex; /* Affiche le menu */
+}
+
+/* Styles pour petits écrans */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 16px;
+    }
+
+    .navbar-content {
+        padding: 8px;
+        justify-content: space-between; /* Le logo reste à gauche et le burger à droite */
+    }
+
+    .navbar-links, .navbar-buttons {
+        display: none; /* Cache les liens de navigation */
+    }
+
+    .navbar-burger {
+        display: block; /* Affiche le burger */
+    }
+
+    /* Affichage du menu quand on clique sur le burger */
+    .navbar-links.is-active {
+        display: flex; /* Affiche les liens de navigation sous forme de colonne */
+        flex-direction: column;
+        gap: 16px;
+        position: absolute;
+        top: 60px; /* Ajuste la position en dessous de la navbar */
+        right: 0;
+        width: 100%;
+        background-color: #dadada;
+        padding: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le dropdown */
     }
 }
